@@ -72,15 +72,15 @@ class Player:
             for column in range(len(board)):
                 if board[row][column] == "-":
                     # instead of storing the whole board, store the row and column index only?!
-                    # copy_board = [row[:] for row in board]
-                    # if maximizingPlayer:
-                    #     copy_board[row][column] = self.stone
-                    # elif self.stone == "W":
-                    #     copy_board[row][column] = "B"
-                    # else:
-                    #     copy_board[row][column] = "W"
+                    copy_board = [row[:] for row in board]
+                    if maximizingPlayer:
+                        copy_board[row][column] = self.stone
+                    elif self.stone == "W":
+                        copy_board[row][column] = "B"
+                    else:
+                        copy_board[row][column] = "W"
 
-                    # successor_list.append(copy_board)
+                    successor_list.append(copy_board)
 
         return successor_list
 
