@@ -2,14 +2,24 @@ from Board import Board
 from Player import *
 
 import random
+from datetime import datetime
+# random.seed(1)
+random.seed(datetime.now())
+
 import numpy as np
 import time
+import globals
+from statistics import mean
+from GameState import GameState
 
 class Gomoku:
-    def __init__(self, board_size, player1, player2, player1_depth = float('inf'), player2_depth = float('inf')):
+    def __init__(self, board_size, suceed_threshold, player1, player2, player1_depth = float('inf'), player2_depth = float('inf')):
         # initialize the board
         self.board = Board(board_size)
         print(f"Initialize the board: \n{self.board}")
+
+        # initialize the game_state
+        self.game_state = GameState(self.board.board)
 
         # initialize white(W)/black(B) stone 
         stone = ['W', 'B']
@@ -21,10 +31,14 @@ class Gomoku:
 
         # initialize player
         if player1 == "minimax":
-            self.player1 = MinimaxPlayer("Player1", player1_stone, player1_depth)
-
+            self.player1 = MinimaxPlayer("Player1", player1_stone, player1_depth, suceed_threshold)
         if player2 == "minimax":
-          self.player2 = MinimaxPlayer("Player2", player2_stone, player2_depth)
+          self.player2 = MinimaxPlayer("Player2", player2_stone, player2_depth, suceed_threshold)
+
+        if player1 == "minimax_alph_beta_prune":
+            self.player1 = MinimaxAlphaBetaPrunePlayer("Player1", player1_stone, player1_depth, suceed_threshold)
+        if player2 == "minimax_alph_beta_prune":
+            self.player2 = MinimaxAlphaBetaPrunePlayer("Player2", player2_stone, player2_depth, suceed_threshold)
 
         # start the game
         self.game_start()
@@ -50,22 +64,45 @@ class Gomoku:
 
     def game_play(self, player):
         print(f"{player.name}'s turn:")
+
+        globals.init()
         start_time = time.time()
-        self.board.board, value = player.place_stone(self.board.board, player.depth, True)
+        # place_stone() method returns the next game_state object
+        self.game_state = player.place_stone(self.game_state, player.depth, True)
         end_time = time.time()
+        elapsed_time = end_time - start_time
+        print(self.game_state)
+        print(f"Number of visited game states: {globals.count}, dictionary size: {len(globals.game_state_dict)}")
         print(f"{player.name} elapsed time: {end_time - start_time}")
-        print(self.board)
-        print(player.game_state_utility(self.board.board)[0])
-        
-        if player.game_state_utility(self.board.board)[0] == True:
-            if player.game_state_utility(self.board.board)[1] > 0:
+        player.elapsed_time_list.append(elapsed_time)
+
+        print(self.game_state.game_board, self.game_state.row, self.game_state.column)
+        print(self.game_state.game_over)        
+        if self.game_state.game_over:
+            if self.game_state.utility > 0:
+                player.succeed_flag = True
+                if player == self.player1:
+                    self.player2.succeed_flag = False
+                elif player == self.player2:
+                    self.player1.succeed_flag = False
                 print(f" Congratulations! {player.name} wins!")
                 return True
-            elif player.game_state_utility(self.board.board)[1] < 0:
-                print(f" Congratulations! Player2 wins!")
+            elif self.game_state.utility < 0:
+                player.succeed_flag = False
+                if player == self.player1:
+                    self.player2.succeed_flag = True
+                elif player == self.player2:
+                    self.player1.succeed_flag = True
+                print(f" Congratulations! {player.name} wins!")
                 return True
-            elif player.game_state_utility(self.board.board)[1] == 0:
+            else:
+                self.player1.succeed_flag = "Draw"
+                self.player2.succeed_flag = "Draw"
                 print(f"Game over! Draw!")
                 return True
 
         return False
+
+    def game_statistics(self):
+        return mean(self.player1.elapsed_time_list), self.player1.succeed_flag, mean(self.player2.elapsed_time_list), self.player2.succeed_flag
+
