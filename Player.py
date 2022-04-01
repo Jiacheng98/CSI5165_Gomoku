@@ -106,7 +106,9 @@ class MinimaxPlayer(Player):
         globals.count += 1
         # check game over or not, and update utility of the game_state
         game_state.game_state_row_col_utility(self.stone, self.threshold)
+
         if game_state.game_over or depth == 0:
+            game_state.game_state_heuristic_row_col_utility(self.stone)
             globals.game_state_dict[game_state] = ''
             if game_state.next_best_state: return game_state.next_best_state 
             else: return game_state
@@ -158,6 +160,7 @@ class MinimaxAlphaBetaPrunePlayer(MinimaxPlayer):
         # check game over or not, and update utility of the game_state
         game_state.game_state_row_col_utility(self.stone, self.threshold)
         if game_state.game_over or depth == 0:
+            game_state.game_state_heuristic_row_col_utility(self.stone)
             globals.game_state_dict[game_state] = ''
             if game_state.next_best_state: return game_state.next_best_state 
             else: return game_state
@@ -166,8 +169,9 @@ class MinimaxAlphaBetaPrunePlayer(MinimaxPlayer):
             successor_list = game_state.successor_row_col_index(maximizingPlayer, self.stone)
             for next_state in successor_list:
                 self.place_stone(next_state, depth - 1, False, game_state.alpha, game_state.beta)
-
+                # input()
                 if next_state.utility > game_state.alpha:
+
                     game_state.alpha = next_state.utility
                     game_state.next_best_state = next_state
                 if game_state.beta <= game_state.alpha:
@@ -183,6 +187,7 @@ class MinimaxAlphaBetaPrunePlayer(MinimaxPlayer):
             for next_state in successor_list:
                 self.place_stone(next_state, depth - 1, True, game_state.alpha, game_state.beta)
                 if next_state.utility < game_state.beta:
+
                     game_state.beta = next_state.utility
                     game_state.next_best_state = next_state
                 if game_state.beta <= game_state.alpha:

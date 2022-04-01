@@ -4,13 +4,13 @@ def main():
 
     running_count = 0
     running_time = 1
-    board_size = 2
-    suceed_threshold = 2
+    board_size = 9
+    suceed_threshold = 5
 
     player1_time_list, player1_succeed_list, player2_time_list, player2_succeed_list = [], [], [], []
     while running_count < running_time:
         # gomoku = Gomoku(board_size, suceed_threshold, "minimax", "minimax")
-        gomoku = Gomoku(board_size, suceed_threshold, "minimax_alph_beta_prune", "minimax_alph_beta_prune")
+        gomoku = Gomoku(board_size, suceed_threshold, "minimax_alph_beta_prune", "minimax_alph_beta_prune", 5, 5)
         player1_mean_elapsed_time, player1_succeed_flag, player2_mean_elapsed_time, player2_succeed_flag = gomoku.game_statistics()
         
         player1_time_list.append(player1_mean_elapsed_time)
