@@ -1,0 +1,5 @@
+minimax depth 1 vs. minimax depth 1
+Player1: minimax:
+black stone ratio: 0.65, winning ratio: 0.0, draw ratio: 1.0, fail ratio: 0.0, average time per step; 0.0007744070306056883s
+Player2: minimax:
+black stone ratio: 0.35, winning ratio: 0.0, draw ratio: 1.0, fail ratio: 0.0, average time per step: 0.000769612498399688s

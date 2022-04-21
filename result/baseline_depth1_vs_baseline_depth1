@@ -1,0 +1,5 @@
+baseline depth 1 vs. baseline depth 1
+Player1: baseline:
+black stone ratio: 0.5, winning ratio: 0.5, draw ratio: 0.0, fail ratio: 0.5, average time per step; 0.0014871555566787719s
+Player2: baseline:
+black stone ratio: 0.5, winning ratio: 0.5, draw ratio: 0.0, fail ratio: 0.5, average time per step: 0.0014631432294845582s

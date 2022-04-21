@@ -1,5 +1,31 @@
 
 class GameState:
+    """
+    A class to represent a game state.
+    
+    ...
+
+    Attributes
+    ----------
+    game_board : matrix
+        the current game state
+    name : str
+        the unique name of the current game_board
+    utility : int
+        the utility of the current game state, it is respect to the player who places the last stone
+    row: int
+        the row is the row where the last player places its stone
+    colum: int
+        the column is the position where the last player places its stone
+    game_over: bool
+        True/False
+    next_best_state: GameState:
+        the best game state in the next step
+    alpha: float
+    beta: float
+
+    """
+
     def __init__(self, game_board):
         self.game_board = game_board
         self.name = ' '.join([str(elem2) for elem in self.game_board for elem2 in elem])
@@ -14,7 +40,6 @@ class GameState:
         self.alpha = -float('inf')
         self.beta = float('inf')
 
-        # self.previous_game_board = None
 
     def __len__(self):
         return len(self.game_board)
@@ -31,14 +56,18 @@ class GameState:
     def __eq__(self, other):
         return self.name == other.name
 
+    
 
-    # return a list of all successors which are chaged [row, column, stone] indexes of the current self.game_board
     def successor_row_col_index(self, maximizingPlayer, stone):
+        '''
+        This function returns a list of all successors. Each element is a list of available [row, column] indexes.
+        Instead of storing the whole game board, store only the row and column index.
+
+        '''
         successor_list = []
         for row in range(len(self.game_board)):
             for column in range(len(self.game_board)):
                 if self.game_board[row][column] == "-":
-                    # instead of storing the whole self.game_board, store the row and column index only?!
                     each_game_board = [row[:] for row in self.game_board]
                     if maximizingPlayer:
                         each_game_board[row][column] = stone
@@ -56,17 +85,23 @@ class GameState:
 
 
 
-    # check whether the game is terminated or not, and give the utility value;
-    # only check the updated row and column
-    # This one only give utilities for terminal states
     def game_state_row_col_utility(self, stone, threshold):
+        '''
+
+        This function checks whether the game is terminated and gives the utility values for terminal states.
+        Instead of checking the whole game board, check only the updated row and column index.
         
+        Parameters:
+        stone: str
+            the current player who wants to search the game tree
+        '''
         row = self.row
         column = self.column
-        # stone is the current player, who wants to search the game space; however, self.game_board[row][column] is the successor game board where the row and column is updated
-        # stone may == or != self.game_board[row][column]
 
-        if stone != "-":
+        # row and column are the updated row and column in the last turn
+        # stone may == or != self.game_board[row][column]
+        if self.game_board[row][column] != "-":
+            
             # check updated row
             board_row = self.game_board[row]
             duplicate_count = 1
@@ -116,7 +151,7 @@ class GameState:
                     else:
                         break
             
-            # check number of consecutive elements, from the upper left to the lower right
+            # check the number of consecutive elements, from the upper left to the lower right
             duplicate_count = 1
             for r in range(first_r + 1, len(self.game_board)):
                 update = r - row
@@ -171,7 +206,7 @@ class GameState:
                     self.utility = -float('inf')
                     return
 
-        # give utility values for game states that have not terminated
+        # game isn't over, no utility
         for row in self.game_board:
             if "-" in row:
                 self.game_over = False
@@ -181,38 +216,60 @@ class GameState:
         self.utility = 0
 
 
-    # check whether the game is terminated or not, and give the utility value;
-    # only check the updated row and column
-    # This one only give utilities for all states: any immediate state and terminal state
-    # Limitation: not consider broken 3 threat, double threats!!!
-    # Search the whole board!
-    def game_state_heuristic_row_col_utility(self, stone):
+    def game_state_heuristic_row_col_utility(self, stone, baseline = False):
+        '''
+
+        This function checks whether the game is terminated or not and gives the utility value.
+        It only checks the updated row and column.
+
+        Unlike the function game_state_row_col_utility(), it gives utilities for all game states: immediate and terminal states.
+        
+        Limitation: Only give utility to the player when it's the player places the last stone, 
+        # for example, when it is black's turn, but the white places a stone, the black will not get a utility, and vice versa
+        # If it is black's turn and black places a stone, the game state's utility is calculated concerning the black player
+        
+        For a game state, the utility is calculated: 
          # 1) If AI can win this turn, AI does so, award = positive infinity!!!
          # 2) AI defends:
             # No. of opponent's, award = n_defend_1 * w_defend_1)
-            # No. of opponent's 2, award = n_defend_2 * w_defend_2
-            # No. of opponent's 3, award = n_defend_3 * w_defend_3
-            # No. of opponent's 4, award = n_defend_4 * w_defend_4
+            # No. of opponent's 2 (break 2s or consecutive 2s), award = n_defend_2 * w_defend_2
+            # No. of opponent's 3 (break 3s or consecutive 3s), award = n_defend_3 * w_defend_3
+            # No. of opponent's 4 (break 4s or consecutive 4s), award = n_defend_4 * w_defend_4
         # 3) AI attacks:
             # No. of self's 2, award = n_attack_2 * w_attack_2
             # No. of self's 3, award = n_attack_3 * w_attack_3
             # No. of self's 4, award = n_attack_4 * w_attack_4
             # place a stone somewhere else, negative infinity!!!
 
-        # opponent's consecutive
+        Parameters:
+            stone (str): the utility is from the perspective of which player?
+            baseline (bool): the baseline player or not
+        
+        '''
+
+        # opponent's broken/consecutive
         # opponent1_no, opponent2_no, opponent3_no, opponent4_no = 0, 0, 0, 0
         opponent_no_list = [None, 0, 0, 0, 0, 0]
-        opponent_weight_list = [None, 1, 2, 5, 100, -float('inf')]
+        opponent_weight_list = [None, 0.1, 0.2, 5, 10, -float('inf')]
 
         # self's consecutive
         # self1_no, self2_no, self3_no, self4_no = 0, 0, 0
         self_no_list = [None, 0, 0, 0, 0, 0]
-        self_weight_list = [None, -10, 1, 3, 8, float('inf')]
+        self_weight_list = [None, -1, 0.1, 0.2, 0.4, float('inf')]
 
+        if baseline:
+            # only attack, not defend
+            opponent_weight_list = [None, -10, -10, -10, -10, -float('inf')]
+
+            # only defend, not attack
+            # self_weight_list = [None, -10, -10, -10, -10, -float('inf')]
+
+            
         row = self.row
         column = self.column
         if self.game_board[self.row][self.column] != "-" and self.game_board[self.row][self.column] == stone:
 
+            # only check a local area [current_index - 4, current_index + 4]
             def row_column_down_up_index(current_index):
                 if current_index - 4 >= 0:  
                     down_index = current_index - 4 
@@ -226,33 +283,30 @@ class GameState:
 
 
             def defend(stone_list, current_index, down_index, up_index):
-                opponent_max_consecutive = 0
+                opponent_max_left_consecutive = 0
                 for i in range(current_index - 1, down_index - 1, -1):
                     if i >= 0: 
                         if stone_list[i] != '-' and stone_list[i] != stone:
-                            opponent_max_consecutive += 1
+                            opponent_max_left_consecutive += 1
                         else:
                             break
-                update_no(opponent_max_consecutive, True)
 
-                opponent_max_consecutive = 0
+                opponent_max_right_consecutive = 0
                 for i in range(current_index + 1, up_index + 1, 1):
                     if i < len(self.game_board):
                         if stone_list[i] != '-' and stone_list[i] != stone:
-                            opponent_max_consecutive += 1
+                            opponent_max_right_consecutive += 1
                         else:
                             break
-                update_no(opponent_max_consecutive, True)
+                # consider both consecutive and broken 2/3/4 situations
+                update_no(opponent_max_left_consecutive + opponent_max_right_consecutive, True)
 
 
 
             def attack(stone_list, current_index, down_index, up_index):
                 opponent_max_consecutive_left_half = 0
-                print(f"I am here, {stone}")
-                print(stone_list)
                 for i in range(current_index, down_index - 1, -1):
                     if stone_list[i] == stone:
-                        print("Here too")
                         opponent_max_consecutive_left_half += 1
                     else:
                         break
@@ -264,9 +318,7 @@ class GameState:
                     else:
                         break
 
-
                 opponent_max_consecutive = opponent_max_consecutive_left_half + opponent_max_consecutive_right_half
-                print(f"Here is the max_consecutive_no: {opponent_max_consecutive}")
                 update_no(opponent_max_consecutive, False)
 
 
@@ -280,15 +332,13 @@ class GameState:
                     self_no_list[max_consecutive_no] += 1
 
 
-            # check row, extract the row from the game_board, but actually the index is the column's index
+            # check row, extract the row from the game_board, but actually, the index is the column's index
             board_row = self.game_board[row]
             column_down_index, column_up_index = row_column_down_up_index(column)
             defend(board_row, column, column_down_index, column_up_index)
             attack(board_row, column, column_down_index, column_up_index)
-            print("Here!!!!!!!!!")
-            print(board_row, column, column_down_index, column_up_index)
 
-            # check column, extract the column from the game_board, but actually the index is the row's index
+            # check column, extract the column from the game_board, but actually, the index is the row's index
             board_column = []
             for index in range(len(self.game_board)):
                 board_column.append(self.game_board[index][column])
@@ -327,7 +377,6 @@ class GameState:
             attack(board_backward_diagonal, current_index_in_backward_diagonal_list, 0, len(board_backward_diagonal) - 1)
 
 
-
             if self_no_list[5] != 0:
                 self.game_over = True
                 self.utility = float('inf')
@@ -345,11 +394,7 @@ class GameState:
                 if self_no_list[each_self_no_index] != None and self_no_list[each_self_no_index] != 0:
                     self.utility += self_no_list[each_self_no_index] * self_weight_list[each_self_no_index]
 
-
-            print(self.game_board, row, column)
-            print(f"Here is the utility: {self.utility}, here is the opponent's list; {opponent_no_list}, here is the self list: {self_no_list}")
-
-        # give utility values for game states that have not terminated
+        # game isn't over
         for row in self.game_board:
             if "-" in row:
                 self.game_over = False

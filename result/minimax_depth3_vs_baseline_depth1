@@ -1,0 +1,5 @@
+minimax depth 3 vs. baseline depth 1
+Player1: minimax:
+black stone ratio: 0.6, winning ratio: 0.0, draw ratio: 0.0, fail ratio: 1.0, average time per step; 6.050901259694781s
+Player2: baseline:
+black stone ratio: 0.4, winning ratio: 1.0, draw ratio: 0.0, fail ratio: 0.0, average time per step: 0.0013863331930977958s

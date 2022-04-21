@@ -1,0 +1,51 @@
+minimax depth inf vs. minimax_alpha_beta depth inf
+Initialize the board: 
+- - -
+- - -
+- - -
+Player1: W, strategy: minimax, seach tree depth: inf              
+Player2: B, strategy: minimax_alpha_beta, search tree depth: inf
+Game Start! Black plays first!
+Player2's turn:
+B - -
+- - -
+- - -
+Player2 elapsed time: 0.010529041290283203
+Number of visited game states: 1080, dictionary size: 1080
+Player1's turn:
+B W -
+- - -
+- - -
+Player1 elapsed time: 0.018170833587646484
+Number of visited game states: 1922, dictionary size: 1922
+Player2's turn:
+B W B
+- - -
+- - -
+Player2 elapsed time: 0.002518177032470703
+Number of visited game states: 309, dictionary size: 309
+Player1's turn:
+B W B
+W - -
+- - -
+Player1 elapsed time: 0.0018930435180664062
+Number of visited game states: 243, dictionary size: 243
+Player2's turn:
+B W B
+W B -
+- - -
+Player2 elapsed time: 0.00015211105346679688
+Number of visited game states: 23, dictionary size: 23
+Player1's turn:
+B W B
+W B -
+W - -
+Player1 elapsed time: 0.00019788742065429688
+Number of visited game states: 32, dictionary size: 32
+Player2's turn:
+B W B
+W B -
+W - B
+Player2 elapsed time: 5.984306335449219e-05
+Number of visited game states: 11, dictionary size: 11
+ Congratulations! Player2 wins!

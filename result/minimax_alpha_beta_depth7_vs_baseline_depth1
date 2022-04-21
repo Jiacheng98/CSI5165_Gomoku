@@ -1,0 +1,5 @@
+minimax_alpha_beta depth 7 vs. baseline depth 1
+Player1: minimax_alpha_beta:
+black stone ratio: 0.3, winning ratio: 0.7, draw ratio: 0.0, fail ratio: 0.3, average time per step; 167.90123332262039s
+Player2: baseline:
+black stone ratio: 0.7, winning ratio: 0.3, draw ratio: 0.0, fail ratio: 0.7, average time per step: 0.0015570974349975587s

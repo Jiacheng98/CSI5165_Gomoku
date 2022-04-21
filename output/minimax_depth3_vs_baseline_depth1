@@ -1,0 +1,907 @@
+minimax depth 3 vs. baseline depth 1
+Initialize the board: 
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1: W, strategy: minimax, seach tree depth: 3              
+Player2: B, strategy: baseline, search tree depth: 1
+Game Start! Black plays first!
+Player2's turn:
+B - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.001661062240600586
+Number of visited game states: 82, dictionary size: 0
+Player1's turn:
+B - - W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 8.514864206314087
+Number of visited game states: 252881, dictionary size: 252881
+Player2's turn:
+B - - W - - - - -
+- B - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0015609264373779297
+Number of visited game states: 80, dictionary size: 0
+Player1's turn:
+B - - W W - - - -
+- B - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 7.657307147979736
+Number of visited game states: 234313, dictionary size: 234313
+Player2's turn:
+B - - W W - - - -
+- B - - - - - - -
+- - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0015139579772949219
+Number of visited game states: 78, dictionary size: 0
+Player1's turn:
+B - - W W - - - -
+- B - - - - - - -
+- - B W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.969674110412598
+Number of visited game states: 216677, dictionary size: 216677
+Player2's turn:
+B B - W W - - - -
+- B - - - - - - -
+- - B W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014910697937011719
+Number of visited game states: 76, dictionary size: 0
+Player1's turn:
+B B - W W - - - -
+- B - - - - - - -
+- - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.45843768119812
+Number of visited game states: 199949, dictionary size: 199949
+Player2's turn:
+B B - W W - - - -
+B B - - - - - - -
+- - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014629364013671875
+Number of visited game states: 74, dictionary size: 0
+Player1's turn:
+B B - W W - - - -
+B B - W - - - - -
+- - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.107060194015503
+Number of visited game states: 184105, dictionary size: 184105
+Player2's turn:
+B B - W W - - - -
+B B - W - - - - -
+B - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.00138092041015625
+Number of visited game states: 72, dictionary size: 0
+Player1's turn:
+B B - W W - - - -
+B B - W - - - - -
+B - B W - - - - -
+- W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 5.373389959335327
+Number of visited game states: 169121, dictionary size: 169121
+Player2's turn:
+B B - W W - B - -
+B B - W - - - - -
+B - B W - - - - -
+- W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0013167858123779297
+Number of visited game states: 70, dictionary size: 0
+Player1's turn:
+B B - W W - B - -
+B B - W - - - - -
+B - B W - - - - -
+W W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 4.764880180358887
+Number of visited game states: 154973, dictionary size: 154973
+Player2's turn:
+B B - W W - B - -
+B B - W - - - B -
+B - B W - - - - -
+W W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0012700557708740234
+Number of visited game states: 68, dictionary size: 0
+Player1's turn:
+B B - W W - B - -
+B B - W - - - B -
+B - B W - - - - -
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 4.456063985824585
+Number of visited game states: 141637, dictionary size: 141637
+Player2's turn:
+B B - W W - B - -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.001219034194946289
+Number of visited game states: 66, dictionary size: 0
+Player1's turn:
+B B W W W - B - -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 4.035581111907959
+Number of visited game states: 128901, dictionary size: 128901
+Player2's turn:
+B B W W W - B B -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011949539184570312
+Number of visited game states: 64, dictionary size: 0
+Player1's turn:
+B B W W W W B B -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 3.559176206588745
+Number of visited game states: 117123, dictionary size: 117123
+Player2's turn:
+B B W W W W B B -
+B B - W - - - B B
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.00116729736328125
+Number of visited game states: 62, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B - W - - - B B
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 3.275031805038452
+Number of visited game states: 106085, dictionary size: 106085
+Player2's turn:
+B B W W W W B B W
+B B - W - - - B B
+B - B W - - - B B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011768341064453125
+Number of visited game states: 60, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B W W - - - B B
+B - B W - - - B B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 2.961419105529785
+Number of visited game states: 95763, dictionary size: 95763
+Player2's turn:
+B B W W W W B B W
+B B W W - - - B B
+B - B W - - - B B
+W W W W - - - - B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011200904846191406
+Number of visited game states: 58, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B W W W - - B B
+B - B W - - - B B
+W W W W - - - - B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 2.6078450679779053
+Number of visited game states: 86133, dictionary size: 86133
+Player2's turn:
+B B W W W W B B W
+B B W W W - - B B
+B - B W - - - B B
+W W W W - - - B B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0010559558868408203
+Number of visited game states: 56, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B W W W W - B B
+B - B W - - - B B
+W W W W - - - B B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 2.318650722503662
+Number of visited game states: 77171, dictionary size: 77171
+Player2's turn:
+B B W W W W B B W
+B B W W W W - B B
+B - B W - - - B B
+W W W W - - - B B
+- - - - - - - B -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0010118484497070312
+Number of visited game states: 54, dictionary size: 0
+ Congratulations! Player2 wins!
+Initialize the board: 
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1: W, strategy: minimax, seach tree depth: 3              
+Player2: B, strategy: baseline, search tree depth: 1
+Game Start! Black plays first!
+Player2's turn:
+B - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014791488647460938
+Number of visited game states: 82, dictionary size: 0
+Player1's turn:
+B - - W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 8.045439958572388
+Number of visited game states: 252881, dictionary size: 252881
+Player2's turn:
+B - - W - - - - -
+- B - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0015101432800292969
+Number of visited game states: 80, dictionary size: 0
+Player1's turn:
+B - - W W - - - -
+- B - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 7.509119987487793
+Number of visited game states: 234313, dictionary size: 234313
+Player2's turn:
+B - - W W - - - -
+- B - - - - - - -
+- - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014531612396240234
+Number of visited game states: 78, dictionary size: 0
+Player1's turn:
+B - - W W - - - -
+- B - - - - - - -
+- - B W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.889425039291382
+Number of visited game states: 216677, dictionary size: 216677
+Player2's turn:
+B B - W W - - - -
+- B - - - - - - -
+- - B W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014567375183105469
+Number of visited game states: 76, dictionary size: 0
+Player1's turn:
+B B - W W - - - -
+- B - - - - - - -
+- - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.433409929275513
+Number of visited game states: 199949, dictionary size: 199949
+Player2's turn:
+B B - W W - - - -
+B B - - - - - - -
+- - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014410018920898438
+Number of visited game states: 74, dictionary size: 0
+Player1's turn:
+B B - W W - - - -
+B B - W - - - - -
+- - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 5.939302921295166
+Number of visited game states: 184105, dictionary size: 184105
+Player2's turn:
+B B - W W - - - -
+B B - W - - - - -
+B - B W - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014040470123291016
+Number of visited game states: 72, dictionary size: 0
+Player1's turn:
+B B - W W - - - -
+B B - W - - - - -
+B - B W - - - - -
+- W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 5.42923903465271
+Number of visited game states: 169121, dictionary size: 169121
+Player2's turn:
+B B - W W - B - -
+B B - W - - - - -
+B - B W - - - - -
+- W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0013189315795898438
+Number of visited game states: 70, dictionary size: 0
+Player1's turn:
+B B - W W - B - -
+B B - W - - - - -
+B - B W - - - - -
+W W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 4.783747673034668
+Number of visited game states: 154973, dictionary size: 154973
+Player2's turn:
+B B - W W - B - -
+B B - W - - - B -
+B - B W - - - - -
+W W W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0012810230255126953
+Number of visited game states: 68, dictionary size: 0
+Player1's turn:
+B B - W W - B - -
+B B - W - - - B -
+B - B W - - - - -
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 4.44460916519165
+Number of visited game states: 141637, dictionary size: 141637
+Player2's turn:
+B B - W W - B - -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0012400150299072266
+Number of visited game states: 66, dictionary size: 0
+Player1's turn:
+B B W W W - B - -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 4.079464912414551
+Number of visited game states: 128901, dictionary size: 128901
+Player2's turn:
+B B W W W - B B -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011990070343017578
+Number of visited game states: 64, dictionary size: 0
+Player1's turn:
+B B W W W W B B -
+B B - W - - - B -
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 3.57700514793396
+Number of visited game states: 117123, dictionary size: 117123
+Player2's turn:
+B B W W W W B B -
+B B - W - - - B B
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011699199676513672
+Number of visited game states: 62, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B - W - - - B B
+B - B W - - - - B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 3.344874143600464
+Number of visited game states: 106085, dictionary size: 106085
+Player2's turn:
+B B W W W W B B W
+B B - W - - - B B
+B - B W - - - B B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011250972747802734
+Number of visited game states: 60, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B W W - - - B B
+B - B W - - - B B
+W W W W - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 3.002228260040283
+Number of visited game states: 95763, dictionary size: 95763
+Player2's turn:
+B B W W W W B B W
+B B W W - - - B B
+B - B W - - - B B
+W W W W - - - - B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0011229515075683594
+Number of visited game states: 58, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B W W W - - B B
+B - B W - - - B B
+W W W W - - - - B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 2.7269279956817627
+Number of visited game states: 86133, dictionary size: 86133
+Player2's turn:
+B B W W W W B B W
+B B W W W - - B B
+B - B W - - - B B
+W W W W - - - B B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0010471343994140625
+Number of visited game states: 56, dictionary size: 0
+Player1's turn:
+B B W W W W B B W
+B B W W W W - B B
+B - B W - - - B B
+W W W W - - - B B
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 2.3488030433654785
+Number of visited game states: 77171, dictionary size: 77171
+Player2's turn:
+B B W W W W B B W
+B B W W W W - B B
+B - B W - - - B B
+W W W W - - - B B
+- - - - - - - B -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0010292530059814453
+Number of visited game states: 54, dictionary size: 0
+ Congratulations! Player2 wins!
+Initialize the board: 
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1: B, strategy: minimax, seach tree depth: 3              
+Player2: W, strategy: baseline, search tree depth: 1
+Game Start! Black plays first!
+Player1's turn:
+- - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 8.811777114868164
+Number of visited game states: 262522, dictionary size: 262522
+Player2's turn:
+W - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0015366077423095703
+Number of visited game states: 81, dictionary size: 0
+Player1's turn:
+W - B - B - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 7.796936988830566
+Number of visited game states: 243479, dictionary size: 243479
+Player2's turn:
+W - B - B - - - -
+- W - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0015861988067626953
+Number of visited game states: 79, dictionary size: 0
+Player1's turn:
+W - B - B B - - -
+- W - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 7.351866722106934
+Number of visited game states: 225380, dictionary size: 225380
+Player2's turn:
+W - B - B B - - -
+- W - - - - - - -
+- - W - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0015690326690673828
+Number of visited game states: 77, dictionary size: 0
+Player1's turn:
+W - B - B B - - -
+- W - - - - - - -
+- - W B - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.844341039657593
+Number of visited game states: 208201, dictionary size: 208201
+Player2's turn:
+W - B - B B - - -
+W W - - - - - - -
+- - W B - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0014672279357910156
+Number of visited game states: 75, dictionary size: 0
+Player1's turn:
+W - B - B B - - -
+W W - - - - - - -
+- - W B - - - - -
+- - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 6.151125192642212
+Number of visited game states: 191918, dictionary size: 191918
+Player2's turn:
+W - B - B B - - -
+W W - - - - - - -
+W - W B - - - - -
+- - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0013802051544189453
+Number of visited game states: 73, dictionary size: 0
+Player1's turn:
+W - B - B B - - -
+W W - B - - - - -
+W - W B - - - - -
+- - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 5.561517953872681
+Number of visited game states: 176507, dictionary size: 176507
+Player2's turn:
+W - B - B B - - -
+W W - B - - - - -
+W - W B - - - - -
+W - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.001390218734741211
+Number of visited game states: 71, dictionary size: 0
+Player1's turn:
+W - B B B B - - -
+W W - B - - - - -
+W - W B - - - - -
+W - B - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player1 elapsed time: 5.204427003860474
+Number of visited game states: 161944, dictionary size: 161944
+Player2's turn:
+W - B B B B - - -
+W W - B - - - - -
+W - W B - - - - -
+W - B - - - - - -
+W - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+- - - - - - - - -
+Player2 elapsed time: 0.0012707710266113281
+Number of visited game states: 69, dictionary size: 0
+ Congratulations! Player2 wins!
